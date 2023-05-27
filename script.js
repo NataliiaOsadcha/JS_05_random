@@ -1,13 +1,12 @@
 const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
-function generateKey(len) {
-    let randomString = '';
-    for (let i = 0; i < len; i++) {
-        let randomPoz = Math.floor(Math.random() * characters.length);
-        randomString += characters.substring(randomPoz,randomPoz+1);
-    }
-    return randomString;
+function generateKey(numbers, keys){
+  let password = '';
+  for(let i = 0; i < numbers; i++){
+    password +=	keys[Math.floor(Math.random() * keys.length)]
+  }
+  return password
 }
 
-const key = generateKey(20, characters);
-console.log(key);
+const key = generateKey(16, characters);
+console.log(key); 
